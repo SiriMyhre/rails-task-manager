@@ -4,10 +4,15 @@
 <% @tasks.each do |task| %>
   <%=check_box_tag("", "", task.completed, disabled: true)%>
   <%= link_to task.title, task_path(task)%>
+  <%= link_to "Remove task", task_path(task), method: :delete %>
+
   <br>
+
 
 
 <% end %>
 
-
+<%= link_to new_task_path do %>
+  <i class="fa fa-plus"></i> Add a new task
+<% end %>
 
